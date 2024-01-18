@@ -1,0 +1,26 @@
+{
+    "name": "crayon/t3element",
+    "type": "typo3-cms-extension",
+    "description": "Create Custom Element using T3element",
+    "authors": [
+        {
+            "name": "T3Element",
+            "email": "info@t3element.com"
+        }
+    ],
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "^11.0",
+        "nng/nnrestapi":"1.4.1"
+    }, 
+    "autoload": {
+        "psr-4": {
+            "Crayon\\T3element\\": "Classes"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "t3element"
+        }
+    }
+}
