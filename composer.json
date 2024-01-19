@@ -10,7 +10,7 @@
     ],
     "license": "GPL-2.0-or-later",
     "require": {
-        "typo3/cms-core": "^11.0",
+        "typo3/cms-core": "11.0.0-11.5.99",
         "nng/nnrestapi":"1.4.1"
     }, 
     "autoload": {
