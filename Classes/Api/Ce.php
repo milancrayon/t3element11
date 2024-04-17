@@ -204,6 +204,13 @@ class Ce extends \Nng\Nnrestapi\Api\AbstractApi
                                         }
                                     }
                                 }
+                                if($value['exp'] == "notlike"){
+                                    if(sizeof($value['fields'])) {
+                                        foreach ($value['fields'] as $ssey => $value__) {
+                                            $_where[] = $queryBuilder->expr()->notLike($value__, $queryBuilder->createNamedParameter('%' . $queryBuilder->escapeLikeWildcards($value['value']) . '%'));
+                                        }
+                                    }
+                                }
                             }
                             $queryBuilder->where(...$_where);
                         }
@@ -224,6 +231,13 @@ class Ce extends \Nng\Nnrestapi\Api\AbstractApi
                                         }
                                     }
                                 }
+                                if($value['exp'] == "notlike"){
+                                    if(sizeof($value['fields'])) {
+                                        foreach ($value['fields'] as $ssey => $value__) {
+                                            $_orWhere[] = $queryBuilder->expr()->notLike($value__, $queryBuilder->createNamedParameter('%' . $queryBuilder->escapeLikeWildcards($value['value']) . '%'));
+                                        }
+                                    }
+                                }
                             }
                             $queryBuilder->orWhere(...$_orWhere);
                         }
@@ -241,7 +255,7 @@ class Ce extends \Nng\Nnrestapi\Api\AbstractApi
                 return ['error'=>$e];
             }
         } 
-        return['error'=> 'Invalid Request!!'];       
+        return['error'=> 'Invalid Request!!'];    
     }
      /**
      * @Api\Route("POST /ce/store")
